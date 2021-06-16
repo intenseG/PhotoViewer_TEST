@@ -21,7 +21,7 @@ function next() {
 }
 
 var nextBtn = document.getElementById('nextBtn');
-nextBtn.onclick = next;
+nextBtn.addEventListener('click', next);
 
 function previous() {
     if (pageNum == 0) {
@@ -34,4 +34,4 @@ function previous() {
 }
 
 var previousBtn = document.getElementById('previousBtn');
-previousBtn.onclick = previous;
+previousBtn.addEventListener('click', previous);
