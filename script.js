@@ -5,26 +5,33 @@ var images = [
 ]
 var pageNum = 0;
 
-function next() {
+function setImage() {
     var img = document.getElementById('image');
+    img.src = images[pageNum];
+}
 
+function next() {
     if (pageNum == images.length - 1) {
         pageNum = 0;
     } else {
         pageNum++;
     }
 
-    img.src = images[pageNum];
+    setImage();
 }
 
-function previous() {
-    var img = document.getElementById('image');
+var nextBtn = document.getElementById('nextBtn');
+nextBtn.onclick = next;
 
+function previous() {
     if (pageNum == 0) {
         pageNum = images.length - 1;
     } else {
         pageNum--;
     }
 
-    img.src = images[pageNum];
+    setImage();
 }
+
+var previousBtn = document.getElementById('previousBtn');
+previousBtn.onclick = previous;
